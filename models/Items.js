@@ -1,11 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Profile extends Model { }
+class Items extends Model { }
 
-Profile.init(
+Items.init(
     {
-        money: {
+        itemType: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
@@ -19,4 +19,4 @@ Profile.init(
     }
 );
 
-module.exports = Profile;
+module.exports = Items;
