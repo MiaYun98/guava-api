@@ -1,33 +1,31 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt")
 
-class User extends Model { }
+class User extends Model {}
 
-User.init(
-    {
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [8],
-            },
-        },
+User.init({
+    // add properites here, ex:
+    userName: {
+         type: DataTypes.STRING,
+         allowNull:false,
+         unique:true
     },
-    {
-        hooks: {
-            beforeCreate: userObj => {
-                userObj.password = bcrypt.hashSync(userObj.password, 8);
-                return userObj
-            }
-        },
-        sequelize,
+    password:{
+        type: DataTypes.STRING,
+        allowNull:false,
+        validate:{
+            len:[8]
+        }
     }
-);
+},{
+    sequelize,
+    hooks:{
+        beforeCreate:function(userObj){
+            userObj.password = bcrypt.hashSync(userObj.password,5)
+            return userObj
+        }
+    }
+});
 
-module.exports = User;
+module.exports=User
