@@ -1,22 +1,22 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Shrubs extends Model { }
+class Shrubs extends Model {}
 
-Shrubs.init(
-    {
-        levels: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        stats: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
+Shrubs.init({
+    // add properites here, ex:
+    name: {
+         type: DataTypes.STRING,
+         allowNull:false,
     },
-    {
-        sequelize,
+    level:{
+        type: DataTypes.INTEGER,
+    },
+    stats: {
+        type: DataTypes.INTEGER,
     }
-);
+},{
+    sequelize,
+});
 
-module.exports = Shrubs;
+module.exports=Shrubs

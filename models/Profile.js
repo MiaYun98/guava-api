@@ -3,20 +3,16 @@ const sequelize = require('../config/connection');
 
 class Profile extends Model { }
 
-Profile.init(
-    {
-        money: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        stats: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-    },
-    {
-        sequelize,
-    }
-);
+Profile.init({
+     // add properites here, ex:
+     money: {
+          type: DataTypes.INTEGER,
+     },
+     days: {
+          type: DataTypes.INTEGER,
+     }
+}, {
+     sequelize
+});
 
 module.exports = Profile;
