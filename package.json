@@ -1,0 +1,25 @@
+{
+  "name": "monsocial-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node utils/seed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiaYun98/monsocial-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MiaYun98/monsocial-api/issues"
+  },
+  "homepage": "https://github.com/MiaYun98/monsocial-api#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.7.3"
+  }
+}
