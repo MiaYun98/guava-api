@@ -48,6 +48,7 @@ router.get('/current-user', (req, res) => {
         res.status(500).json({ msg: "error occurred", err })
     }
 })
+
 router.post('/create', (req, res) => {
     try {
         const token = req.headers.authorization.split(" ")[1];
