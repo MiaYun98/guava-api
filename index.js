@@ -1,5 +1,7 @@
 const express = require('express');
 const routes = require('./controllers');
+// import cors
+const cors = require('cors');
 // import sequelize connection
 const sequelize = require('./config/connection');
 
@@ -8,6 +10,9 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+//use cors
+app.use(cors());
 
 app.use(routes);
 

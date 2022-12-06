@@ -19,8 +19,8 @@ router.get("/token", (req, res) => {
 })
 
 router.get("/readtoken", (req, res) => {
-    const token = req.headers.authorization.split(" ")[1];
     try {
+        const token = req.headers.authorization.split(" ")[1];
         const tokenData = jwt.verify(token, process.env.JWT_SECRET)
         console.log(tokenData)
         res.json("okay")
