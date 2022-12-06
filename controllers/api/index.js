@@ -2,7 +2,7 @@ const router = require('express').Router();
 const userRoutes = require('./user-routes');
 const profileRoutes = require('./profile-routes');
 const shrubsRoutes = require('./shrub-routes');
-const itemRoutes = require('./item-routes1');
+const itemRoutes = require('./item-routes');
 const profileTagRoutes = require('./profiletag-routes');
 const shrubTagRoutes = require('./shrubtag-routes');
 
