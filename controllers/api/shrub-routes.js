@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const jwt = require("jsonwebtoken");
 
-const { User, Profile, Shrubs } = require('../../models');
+const { User, Profile, Shrub } = require('../../models');
 
 router.get('/', (req, res) => {
-    Shrubs.findAll({
+    Shrub.findAll({
         include: [Profile]
     }).then(allUser =>
         res.json(allUser)
@@ -17,7 +17,7 @@ router.get("/myshrub", (req, res) => {
     try {
         const token = req.headers.authorization.split(" ")[1];
         const userData = jwt.verify(token, process.env.JWT_SECRET)
-        Shrubs.findOne({
+        Shrub.findOne({
             where: {
                 ProfileId: userData.id
             }
@@ -28,6 +28,6 @@ router.get("/myshrub", (req, res) => {
         console.log(err);
         res.status(500).json({ mes: "no shrubs with this user" })
     }
-
 })
+
 module.exports = router; 

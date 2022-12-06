@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Shrubs extends Model {}
+class Shrub extends Model {}
 
-Shrubs.init({
+Shrub.init({
     // add properites here, ex:
     name: {
          type: DataTypes.STRING,
@@ -19,4 +19,4 @@ Shrubs.init({
     sequelize,
 });
 
-module.exports=Shrubs
+module.exports=Shrub
