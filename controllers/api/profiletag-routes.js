@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const jwt = require("jsonwebtoken");
-
 const { User, Profile, Shrub, ProfileTag, Item } = require('../../models');
 
 router.get('/', (req, res) => {
