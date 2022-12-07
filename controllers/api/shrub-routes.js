@@ -16,11 +16,9 @@ router.get('/', (req, res) => {
 // api/shrubs/myshrubs
 router.get("/myshrub", (req, res) => {
     try {
-        const token = req.headers.authorization.split(" ")[1];
-        const userData = jwt.verify(token, process.env.JWT_SECRET)
         Shrub.findOne({
             where: {
-                ProfileId: userData.id
+                ProfileId: req.body.ProfileId
             },
             include: [Item]
         }).then(shrubData => {
