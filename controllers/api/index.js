@@ -5,7 +5,9 @@ const shrubsRoutes = require('./shrub-routes');
 const itemRoutes = require('./item-routes');
 const profileTagRoutes = require('./profiletag-routes');
 const shrubTagRoutes = require('./shrubtag-routes');
+const naturalRoutes = require('./natural')
 
+router.use('/natural', naturalRoutes)
 router.use('/user', userRoutes);
 router.use('/profile', profileRoutes);
 router.use('/shrub', shrubsRoutes);
