@@ -77,8 +77,98 @@ const seedMe = async ()=>{
             stats: 1,
         },
         {
-            name:"ball",
-            type:"toy",
+            name:"blash",
+            type:"mouth",
+            stats: 3,
+        },
+        {
+            name:"darkcircle",
+            type:"eye",
+            stats: 3,
+        },
+        {
+            name:"earing",
+            type:"head",
+            stats: 3,
+        },
+        {
+            name:"eyelash",
+            type:"eye",
+            stats: 3,
+        },
+        {
+            name:"frakle",
+            type:"mouth",
+            stats: 3,
+        },
+        {
+            name:"glass",
+            type:"eye",
+            stats: 3,
+        },
+        {
+            name:"harrypotter",
+            type:"head",
+            stats: 3,
+        },
+        {
+            name:"monocle",
+            type:"eye",
+            stats: 3,
+        },
+        {
+            name:"mountainhat",
+            type:"haed",
+            stats: 3,
+        },
+        {
+            name:"mouth",
+            type:"mouth",
+            stats: 3,
+        },
+        {
+            name:"mush",
+            type:"mouth",
+            stats: 3,
+        },
+        {
+            name:"nose",
+            type:"eye",
+            stats: 3,
+        },
+        {
+            name:"mouth",
+            type:"mouth",
+            stats: 3,
+        },
+        {
+            name:"ribbon",
+            type:"head",
+            stats: 3,
+        },
+        {
+            name:"scrar",
+            type:"mouth",
+            stats: 3,
+        },
+        {
+            name:"shineyeyes",
+            type:"eye",
+            stats: 3,
+        },
+        {
+            name:"star",
+            type:"head",
+            stats: 3,
+        },
+        {
+            name:"toung",
+            type:"mouth",
+            stats: 3,
+        },
+        {
+            name:"witchhat",
+            type:"mouth",
             stats: 3,
         },
     ]
