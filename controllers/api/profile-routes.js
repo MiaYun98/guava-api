@@ -54,10 +54,9 @@ router.post('/create', (req, res) => {
         const token = req.headers.authorization.split(" ")[1];
         const userData = jwt.verify(token, process.env.JWT_SECRET);
         Profile.create({
-            money: req.body.money,
-            days: req.body.days,
+            money: 0,
+            days: 0,
             UserId: userData.id,
-            items: null,
         }).then(profileData => {
             res.json(profileData)
         })
@@ -75,7 +74,6 @@ router.put('/update', (req, res) => {
             money: req.body.money,
             days: req.body.days,
             UserId: userData.id,
-            items: req.body.items,
         },
             {
                 where: {

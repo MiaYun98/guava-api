@@ -40,19 +40,28 @@ const seedMe = async ()=>{
         {
             name:"cake",
             level:1,
-            stats: 1,
+            hunger: 80,
+            hygiene: 40,
+            happiness: 80,
+            energy: 100,
             ProfileId: 1
         },
         {
             name:"snack",
             level:1,
-            stats: 1,
+            hunger: 80,
+            hygiene: 40,
+            happiness: 80,
+            energy: 100,
             ProfileId: 2
         },
         {
             name:"lock",
             level:1,
-            stats: 1,
+            hunger: 80,
+            hygiene: 40,
+            happiness: 80,
+            energy: 100,
             ProfileId: 3
         },
     ]
@@ -60,7 +69,7 @@ const seedMe = async ()=>{
         {
             name:"cake",
             type:"food",
-            stats: 1,
+            hunger: 1,
         },
         {
             name:"snack",

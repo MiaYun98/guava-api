@@ -12,7 +12,16 @@ Shrub.init({
     level:{
         type: DataTypes.INTEGER,
     },
-    stats: {
+    hunger: {
+        type: DataTypes.INTEGER,
+    },
+    hygiene: {
+        type: DataTypes.INTEGER,
+    },
+    happiness: {
+        type: DataTypes.INTEGER,
+    },
+    energy: {
         type: DataTypes.INTEGER,
     }
 },{

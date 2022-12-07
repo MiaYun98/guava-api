@@ -4,13 +4,9 @@ const jwt = require("jsonwebtoken");
 const { User, Profile, Shrub, ProfileTag, Item, ShrubTag } = require('../../models');
 
 router.get('/', (req, res) => {
-    console.log("hello")
-    res.json("hell9?")
-    // ProfileTag.findAll({
-    //     include: [Profile]
-    // }).then(allUser =>
-    //     res.json(allUser)
-    // )
+    ShrubTag.findAll().then(allTag =>
+        res.json(allTag)
+    )
 })
 
 // api/shrubtag/:id

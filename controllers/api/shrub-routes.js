@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const jwt = require("jsonwebtoken");
 
-const { User, Profile, Shrub } = require('../../models');
+const { User, Profile, Shrub, Item } = require('../../models');
 
 router.get('/', (req, res) => {
     Shrub.findAll({
@@ -20,7 +20,8 @@ router.get("/myshrub", (req, res) => {
         Shrub.findOne({
             where: {
                 ProfileId: userData.id
-            }
+            },
+            include: [Item]
         }).then(shrubData => {
             res.json(shrubData)
         })
@@ -28,6 +29,23 @@ router.get("/myshrub", (req, res) => {
         console.log(err);
         res.status(500).json({ mes: "no shrubs with this user" })
     }
+})
+
+router.post('/create', (req, res) => {
+    Shrub.create({
+        name: "Shrub",
+        level: 1,
+        hunger: 100,
+        hygiene: 100,
+        happiness: 100,
+        energy: 100,
+        ProfileId: req.body.ProfileId
+    }).then(data => {
+        res.json(data)
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json({ msg: "error occurred", err })
+    })
 })
 
 module.exports = router; 
