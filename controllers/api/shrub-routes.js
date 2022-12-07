@@ -15,19 +15,15 @@ router.get('/', (req, res) => {
 
 // api/shrubs/myshrubs
 router.get("/myshrub", (req, res) => {
-    try {
-        Shrub.findOne({
-            where: {
-                ProfileId: req.body.ProfileId
-            },
-            include: [Item]
-        }).then(shrubData => {
-            res.json(shrubData)
-        })
-    } catch (err) {
-        console.log(err);
-        res.status(500).json({ mes: "no shrubs with this user" })
-    }
+    Shrub.findOne({
+        where: {
+            ProfileId: req.body.ProfileId,
+        }
+    }).then(data => {
+        res.json(data)
+    }).catch(err => {
+        console.log("no shrub with this user")
+    })
 })
 
 router.post('/create', (req, res) => {

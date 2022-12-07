@@ -23,6 +23,26 @@ router.get("/getuserfromtoken", (req, res) => {
     }
 })
 
+router.get('/current-user', (req, res) => {
+    try {
+        const token = req.headers.authorization.split(" ")[1];
+        const userData = jwt.verify(token, process.env.JWT_SECRET);
+        console.log(userData)
+        User.findOne({
+            where: {
+                id: userData.id
+            },
+            include:[Profile]
+        }).then(profileData => {
+            console.log(profileData)
+            res.json(profileData)
+        })
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ msg: "error occurred", err })
+    }
+})
+
 router.post("/login", (req, res) => {
     User.findOne({
         where: {
