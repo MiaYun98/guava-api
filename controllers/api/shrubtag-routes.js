@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     )
 })
 
-// api/shrubtag/:id
+// api/shrubtag/current
 router.get("/current", (req, res) => {
     try {
         const token = req.headers.authorization.split(" ")[1];
@@ -18,7 +18,7 @@ router.get("/current", (req, res) => {
             where: {
                 UserId: userData.id
             },
-            include:[Shrub]
+            include: [Shrub]
         }).then(userData => {
             ShrubTag.findAll({
                 where: {
@@ -33,6 +33,34 @@ router.get("/current", (req, res) => {
         res.status(500).json({ mes: "no shrubs with this user" })
     }
 })
+
+// createing new outfit! 
+// api/shrubtag/change
+router.post("/change", (req, res) => {
+    ShrubTag.create({
+        ShrubId: req.body.ShrubId,
+        ItemId: req.body.ItemId
+    }).then(tagData => {
+        res.json(tagData)
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json({ err: err })
+    })
+})
+
+router.delete("/delete", (req, res) => {
+    ShrubTag.destroy({
+        where: {
+            ShrubId: req.body.ShrubId
+        }
+    }).then(data => {
+        res.json(data)
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json({ err: err })
+    })
+})
+
 
 // updating the clothes
 // router.post("/changing", (req, res) => {

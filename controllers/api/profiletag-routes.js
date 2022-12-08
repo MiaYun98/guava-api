@@ -34,4 +34,16 @@ router.get("/current", (req, res) => {
     }
 })
 
+router.post("/add", (req, res) => {
+    ProfileTag.create({
+        ProfileId: req.body.ProfileId,
+        ItemId: req.body.ItemId
+    }).then(tagData => {
+        res.json(tagData)
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json({ err: err })
+    })
+})
+
 module.exports = router; 

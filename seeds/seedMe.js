@@ -122,7 +122,7 @@ const seedMe = async ()=>{
             stats: 3,
         },
         {
-            name:"mouth",
+            name:"lip",
             type:"mouth",
             stats: 3,
         },

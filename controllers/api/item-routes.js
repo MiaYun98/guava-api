@@ -26,5 +26,52 @@ router.get('/shrub', (req, res) => {
     })
 })
 
+router.get('/head', (req, res) => {
+    Item.findAll({
+        where:{
+            type:"head",
+        }
+    }).then(head => {
+        res.json(head)
+    }).catch(err => {
+        console.log(err)
+    })
+})
+
+router.get('/eye', (req, res) => {
+    Item.findAll({
+        where:{
+            type:"eye",
+        }
+    }).then(eye => {
+        res.json(eye)
+    }).catch(err => {
+        console.log(err)
+    })
+})
+
+router.get('/mouth', (req, res) => {
+    Item.findAll({
+        where:{
+            type:"mouth",
+        }
+    }).then(mouth => {
+        res.json(mouth)
+    }).catch(err => {
+        console.log(err)
+    })
+})
+
+router.get("/:id", (req, res) => {
+    Item.findOne({
+        where: {
+            id: req.params.id
+        }
+    }).then(item => {
+        res.json(item)
+    }).catch(err => {
+        console.log(err)
+    })
+})
 
 module.exports = router; 
