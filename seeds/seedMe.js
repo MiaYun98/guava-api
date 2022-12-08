@@ -67,16 +67,6 @@ const seedMe = async ()=>{
     ]
     const items = [
         {
-            name:"cake",
-            type:"food",
-            hunger: 1,
-        },
-        {
-            name:"snack",
-            type:"food",
-            stats: 1,
-        },
-        {
             name:"blash",
             type:"mouth",
             stats: 3,
@@ -122,7 +112,7 @@ const seedMe = async ()=>{
             stats: 3,
         },
         {
-            name:"lip",
+            name:"lips",
             type:"mouth",
             stats: 3,
         },
@@ -170,6 +160,11 @@ const seedMe = async ()=>{
             name:"witchhat",
             type:"mouth",
             stats: 3,
+        },
+        {
+            name:"default",
+            type:"all",
+            stats: 0,
         },
     ]
     const shrubsTag = [

@@ -62,6 +62,18 @@ router.get('/mouth', (req, res) => {
     })
 })
 
+router.get("/name/:name", (req, res) => {
+    Item.findOne({
+        where: {
+            name: req.params.name
+        }
+    }).then(item => {
+        res.json(item)
+    }).catch(err => {
+        console.log(err)
+    })
+})
+
 router.get("/:id", (req, res) => {
     Item.findOne({
         where: {
@@ -73,5 +85,7 @@ router.get("/:id", (req, res) => {
         console.log(err)
     })
 })
+
+
 
 module.exports = router; 
