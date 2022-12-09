@@ -86,6 +86,17 @@ router.get("/:id", (req, res) => {
     })
 })
 
-
+router.post('/create', (req, res) => {
+    Shrub.create({
+        name: req.body.name,
+        type: req.body.mouth,
+        stats: req.body.stats   
+    }).then(data => {
+        res.json(data)
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json({ msg: "error occurred", err })
+    })
+})
 
 module.exports = router; 
