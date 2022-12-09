@@ -18,7 +18,7 @@ const seedMe = async ()=>{
     ]
     const profile = [
         {
-            money:10,
+            money:250,
             days:1,
             UserId: 1,
             items:"1"
@@ -137,7 +137,7 @@ const seedMe = async ()=>{
             stats: 3,
         },
         {
-            name:"scrar",
+            name:"scar",
             type:"mouth",
             stats: 3,
         },

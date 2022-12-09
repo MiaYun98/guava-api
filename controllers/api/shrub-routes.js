@@ -18,11 +18,34 @@ router.get("/myshrub", (req, res) => {
         where: {
             ProfileId: req.body.ProfileId,
         },
-        include:[Item]
+        include: [Item]
     }).then(data => {
         res.json(data)
     }).catch(err => {
         console.log("no shrub with this user")
+    })
+})
+
+router.put("/update", (req, res) => {
+    Shrub.update({
+        name: req.body.name,
+        level: req.body.level,
+        hunger: req.body.hunger,
+        hygiene: req.body.hygiene,
+        happiness: req.body.happiness,
+        energy: req.body.energy,
+        ProfileId: req.body.ProfileId
+    },   
+        {
+            where: {
+                ProfileId: req.body.ProfileId,
+            }
+        }
+    ).then(data => {
+        res.status(200).json(data)
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json({ msg: "error occurred", err })
     })
 })
 
@@ -54,7 +77,7 @@ router.get('/getitem', (req, res) => {
         res.json(oneItem)
     }).catch(err => {
         console.log(err)
-        res.status(500).json({ msg: "error occurred", err})
+        res.status(500).json({ msg: "error occurred", err })
     })
 })
 

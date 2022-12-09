@@ -72,16 +72,14 @@ router.post('/create', (req, res) => {
 
 router.put('/update', (req, res) => {
     try {
-        const token = req.headers.authorization.split(" ")[1];
-        const userData = jwt.verify(token, process.env.JWT_SECRET);
         Profile.update({
             money: req.body.money,
             days: req.body.days,
-            UserId: userData.id,
+            UserId: req.body.UserId,
         },
             {
                 where: {
-                    UserId: userData.id
+                    UserId: req.body.UserId
                 }
             }
         ).then(data => {
