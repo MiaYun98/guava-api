@@ -11,7 +11,6 @@ Item.init({
     },
     type:{
         type: DataTypes.STRING,
-        allowNull:false,
     },
     stats: {
         type: DataTypes.INTEGER,
