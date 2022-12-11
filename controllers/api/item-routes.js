@@ -89,7 +89,7 @@ router.get("/:id", (req, res) => {
 router.post('/create', (req, res) => {
     Item.create({
         name: req.body.name,
-        type: req.body.mouth,
+        type: req.body.type,
         stats: req.body.stats   
     }).then(data => {
         res.json(data)
