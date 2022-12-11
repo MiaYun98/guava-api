@@ -108,7 +108,7 @@ const seedMe = async ()=>{
         },
         {
             name:"mountainhat",
-            type:"haed",
+            type:"head",
             stats: 3,
         },
         {

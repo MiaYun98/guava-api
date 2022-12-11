@@ -78,7 +78,7 @@ router.post('/signup', (req, res) => {
             id: data.id,
             userName: data.userName
         }, process.env.JWT_SECRET, {
-            expiresIn: "2h"
+            expiresIn: "5h"
         })
         return res.json({
             token,

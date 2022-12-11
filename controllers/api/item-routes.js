@@ -87,7 +87,7 @@ router.get("/:id", (req, res) => {
 })
 
 router.post('/create', (req, res) => {
-    Shrub.create({
+    Item.create({
         name: req.body.name,
         type: req.body.mouth,
         stats: req.body.stats   
