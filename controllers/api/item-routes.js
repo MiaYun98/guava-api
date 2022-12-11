@@ -28,8 +28,8 @@ router.get('/shrub', (req, res) => {
 
 router.get('/head', (req, res) => {
     Item.findAll({
-        where:{
-            type:"head",
+        where: {
+            type: "head",
         }
     }).then(head => {
         res.json(head)
@@ -40,8 +40,8 @@ router.get('/head', (req, res) => {
 
 router.get('/eye', (req, res) => {
     Item.findAll({
-        where:{
-            type:"eye",
+        where: {
+            type: "eye",
         }
     }).then(eye => {
         res.json(eye)
@@ -52,8 +52,8 @@ router.get('/eye', (req, res) => {
 
 router.get('/mouth', (req, res) => {
     Item.findAll({
-        where:{
-            type:"mouth",
+        where: {
+            type: "mouth",
         }
     }).then(mouth => {
         res.json(mouth)
@@ -89,13 +89,25 @@ router.get("/:id", (req, res) => {
 router.post('/create', (req, res) => {
     Item.create({
         name: req.body.name,
-        type: req.body.mouth,
-        stats: req.body.stats   
+        type: req.body.type,
+        stats: req.body.stats
     }).then(data => {
         res.json(data)
     }).catch(err => {
         console.log(err);
         res.status(500).json({ msg: "error occurred", err })
+    })
+})
+
+router.delete('/delete', (req, res) => {
+    Item.destroy({
+        where: {
+            id: req.body.id
+        }
+    }).then(data => {
+        console.log(data)
+    }).catch(err => {
+        console.log(err)
     })
 })
 
