@@ -50,9 +50,9 @@ router.post("/login", (req, res) => {
         }
     }).then(foundUser => {
         if (!foundUser) {
-            return res.status(401).json({ mes: "no match user", err })
+            return res.status(401).json({ mes: "no match user"})
         } else if (!bcrypt.compareSync(req.body.password, foundUser.password)) {
-            return res.status(401).json({ mes: "no match user", err })
+            return res.status(401).json({ mes: "no match user"})
         } else {
             const token = jwt.sign({
                 id: foundUser.id,
