@@ -6,7 +6,9 @@ const { User, Profile, Shrub, ProfileTag, Item } = require('../../models');
 router.get('/', (req, res) => {
     ProfileTag.findAll().then(allTag =>
         res.json(allTag)
-    )
+    ).catch(err => {
+        console.log(err)
+    })
 })
 
 // api/profileTag/:id

@@ -6,7 +6,9 @@ const { User, Profile, Shrub, ProfileTag, Item, ShrubTag } = require('../../mode
 router.get('/', (req, res) => {
     ShrubTag.findAll().then(allTag =>
         res.json(allTag)
-    )
+    ).catch(err =>{
+        console.log(err)
+    })
 })
 
 // api/shrubtag/current

@@ -9,7 +9,9 @@ router.get('/', (req, res) => {
         include: [Profile]
     }).then(allUser =>
         res.json(allUser)
-    )
+    ).catch(err => {
+        console.log(err)
+    })
 })
 
 // api/shrubs/myshrubs

@@ -9,7 +9,9 @@ router.get('/', (req, res) => {
         include: [User]
     }).then(allUser =>
         res.json(allUser)
-    )
+    ).catch(err => {
+        console.log(err)
+    })
 })
 
 router.get('/item', (req, res) => {
@@ -17,6 +19,8 @@ router.get('/item', (req, res) => {
         include: [Item]
     }).then(allItems => {
         res.json(allItems)
+    }).catch(err => {
+        console.log(err)
     })
 })
 
@@ -50,6 +54,8 @@ router.get('/:id', (req, res) => {
     }).then(oneUser => {
 
         res.json(oneUser)
+    }).catch(err => {
+        console.log(err)
     })
 })
 

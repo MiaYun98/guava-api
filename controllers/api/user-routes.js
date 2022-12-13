@@ -9,7 +9,9 @@ router.get('/', (req, res) => {
     User.findAll({ include: [Profile] }
     ).then(allUser =>
         res.json(allUser)
-    )
+    ).catch(err => {
+        console.log(err)
+    })
 })
 
 router.get("/getuserfromtoken", (req, res) => {
