@@ -53,7 +53,7 @@ router.put("/update", (req, res) => {
 
 router.post('/create', (req, res) => {
     Shrub.create({
-        name: "Shrub",
+        name: req.body.name,
         level: 1,
         hunger: 100,
         hygiene: 100,
