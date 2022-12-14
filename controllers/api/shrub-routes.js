@@ -29,13 +29,49 @@ router.get("/myshrub", (req, res) => {
 })
 
 router.put("/update", (req, res) => {
+    let hungerval; 
+    let hygieneval;
+    let happinessval;
+    let energyval;
+    if(req.body.hunger < 0) {
+        hungerval = 0
+    } else if (req.body.hunger > 100) {
+        hungerval = 100
+    } else {
+        hungerval = req.body.hunger
+    }
+
+    if(req.body.hygiene < 0) {
+        hygieneval = 0
+    } else if (req.body.hygiene > 100) {
+        hygieneval = 100
+    } else {
+        hygieneval = req.body.hygiene
+    }
+
+    if(req.body.happiness < 0) {
+        happinessval = 0
+    } else if (req.body.happiness > 100) {
+        happinessval = 100
+    } else {
+        happinessval = req.body.happiness
+    }
+
+    if(req.body.energy < 0) {
+        energyval = 0
+    } else if (req.body.energy > 100) {
+        energyval = 100
+    } else {
+        energyval = req.body.energy
+    }
+
     Shrub.update({
         name: req.body.name,
         level: req.body.level,
-        hunger: req.body.hunger,
-        hygiene: req.body.hygiene,
-        happiness: req.body.happiness,
-        energy: req.body.energy,
+        hunger: hungerval,
+        hygiene: hygieneval,
+        happiness: happinessval,
+        energy: energyval,
         ProfileId: req.body.ProfileId
     },   
         {
