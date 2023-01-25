@@ -9,7 +9,9 @@ router.get('/', (req, res) => {
     User.findAll({ include: [Profile] }
     ).then(allUser =>
         res.json(allUser)
-    )
+    ).catch(err => {
+        console.log(err)
+    })
 })
 
 router.get("/getuserfromtoken", (req, res) => {
@@ -50,9 +52,9 @@ router.post("/login", (req, res) => {
         }
     }).then(foundUser => {
         if (!foundUser) {
-            return res.status(401).json({ mes: "no match user", err })
+            return res.status(401).json({ mes: "no match user"})
         } else if (!bcrypt.compareSync(req.body.password, foundUser.password)) {
-            return res.status(401).json({ mes: "no match user", err })
+            return res.status(401).json({ mes: "no match user"})
         } else {
             const token = jwt.sign({
                 id: foundUser.id,
@@ -66,6 +68,9 @@ router.post("/login", (req, res) => {
                 user: foundUser
             })
         }
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json({ msg: "error occurred", err })
     })
 })
 

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { SentimentAnalyzer, stemmer } = require('natural')
+
 router.post('/', (req, res) => {
 
     const analyzer = new SentimentAnalyzer("English", stemmer, "afinn");
