@@ -29,10 +29,15 @@ SO THAT while working with the React.js it won't cause a merge conflict and easy
 
 ## Installation 
 
+```md
 
+```
 
 ## Usage 
 
+```md
+
+```
 
 ## APP Screen Shot 
 
@@ -42,7 +47,7 @@ SO THAT while working with the React.js it won't cause a merge conflict and easy
 
 This project was created by Jordan Johnson, Sangmi Yun, and David Kovalchuk.
 
-The APIs that we used are:
+The APIs that we used for the backend processing is :
 
 - [Web Speech API] (https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
 
@@ -53,7 +58,7 @@ The APIs that we used are:
 
 ## Deployed Application 
 
-https://shrubclub.netlify.app/ 
+https://guava-api.herokuapp.com/
 
 ## License 
 
