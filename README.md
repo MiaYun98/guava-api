@@ -15,7 +15,9 @@ Also, all the Items datas are implemented by hands.
 ## UserStory 
 
 ```md
-
+As a User Who wants to store data of the shrub and profile information in the database. 
+I WANT to have a each section of the data and easily fetch the data to the front end
+SO THAT while working with the React.js it won't cause a merge conflict and easy to work with the team mates without working space issues. 
 
 ```
 
