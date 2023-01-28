@@ -30,7 +30,8 @@ SO THAT while working with the React.js it won't cause a merge conflict and easy
 ## Installation 
 
 ```md
-
+You should create database first with schema.sql
+and seeds data by run seeds
 ```
 
 ## Usage 
