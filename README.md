@@ -36,7 +36,9 @@ SO THAT while working with the React.js it won't cause a merge conflict and easy
 ## Usage 
 
 ```md
-
+This is an API website created for the user data of the Shrub Club 
+All the passwords are bycryped and saved to the database 
+It is easy access with the domain of the website
 ```
 
 ## APP Screen Shot 
