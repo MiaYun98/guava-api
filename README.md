@@ -24,6 +24,7 @@ SO THAT while working with the React.js it won't cause a merge conflict and easy
 ## Acceptance Criteria
 
 ```md
+When we start the website we should know the website is working
 
 ```
 
@@ -44,7 +45,7 @@ It is easy access with the domain of the website
 
 ## APP Screen Shot 
 
-
+![Alt text](Untitled.png)
 
 ## Credits 
 
