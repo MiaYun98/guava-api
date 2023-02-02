@@ -27,7 +27,8 @@ SO THAT while working with the React.js it won't cause a merge conflict and easy
 When we start the website we should know the website is working
 We should access all the data's with api
 Profile should include name and password and the shrubId
-Password should be bycrpted for the safties
+Password should be bycrypted for the safties
+There should be seeds for the items
 ```
 
 ## Installation 
